@@ -1,0 +1,34 @@
+---
+import Project from "@/components/landing/Project.astro";
+
+const projects = [
+  /* {
+    title: "GymDue",
+    description: "Financial accountability for exercising",
+    technologies: ["React", "NextJS", "MongoDB", "Mongoose", "NextAuth", "Stripe"],
+    link: "https://typingseo.com"
+  }, */
+  {
+    title: "TypingSEO",
+    description: "Tools for SEO content optimization",
+    technologies: ["React", "NextJS", "Typescript", "Supabase", "Stripe", "Tailwind", "DaisyUI", "AI"],
+    link: "https://typingseo.com"
+  },
+  {
+    title: "TasksTally",
+    description: "Real-time Scrum poker with Jira integration",
+    technologies: ["React", "Remix", "NodeJS", "SocketIO", "Typescript", "MantineUI", "Real-time"],
+    link: "https://taskstally.com"
+  }
+];
+---
+
+<div class="flex flex-col gap-4">
+    <h2 class="text-xl sm:text-2xl font-bold sm:mb-2 flex justify-between items-baseline">
+        <span>Featured projects</span> 
+    </h2>
+    {projects.map((project) => (
+      <Project {...project} />
+    ))}
+    <a href="/projects/" class="flex self-center hover:underline">View all</a>
+  </div>

@@ -1,0 +1,35 @@
+---
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { ExternalLink } from "lucide-astro";
+import { Image } from 'astro:assets';
+
+const { title, description, technologies, link } = Astro.props;
+---
+
+<Card key={title}>
+    <CardHeader>
+      <div class="flex justify-between">
+        <div class="flex gap-4">
+          <Image src={`${link}/favicon.ico`} alt={title} width={36} height={36} class="w-[36px] h-[36px]" />
+          <div>
+            <CardTitle className="mb-2">{title}</CardTitle>
+            <CardDescription>{description}</CardDescription>
+          </div>
+        </div>
+        <Button variant="outline" size="icon">
+          <a href={link} target="_blank">
+            <ExternalLink />
+          </a>
+        </Button>
+      </div>
+    </CardHeader>
+    <CardContent>
+      <div class="flex flex-wrap gap-2">
+        {technologies.map((technology: string) => (
+          <Badge key={technology} variant="secondary">{technology}</Badge>
+        ))}
+      </div>
+    </CardContent>
+  </Card>
