@@ -28,15 +28,20 @@ const socials = [
 ---
 <div class="flex flex-col gap-4">
 	<h2 class="text-xl sm:text-2xl font-bold sm:mb-2">About me</h2>
-	<p>
+  <ul>
+    <li>Full-Stack Software Engineer based in Barcelona with more than 10 years of experience</li>
+    <li>Self-taught developer and Startup cofounder turned Computer Scientist, specialized in Software Engineering</li>
+    <li>I like to have a holistic view of the products and the projects I'm involved with, from conceptualization to deployment</li>
+  </ul>
+	<!-- <p>
 	  I'm  a Full-Stack Software Engineer based in Barcelona with more than 10 years of experience. Self-taught developer and Startup cofounder turned Computer Scientist, specialized in Software Engineering. I like to have a holistic view of the products and the projects I'm involved with, from conceptualization to deployment.
-	</p>
+	</p> -->
 	<div class="flex gap-4 mt-4">
 		{socials.map((social) => (
 			<a href={social.link} target="_blank">
-				<Button variant="outline" size="icon" key={social.name} client:load className="cursor-pointer">
-					<social.icon />
-				</Button>
+				<button class="btn btn-square">
+					<social.icon size={16} />
+				</button>
 			</a>
 		))}
 	</div>
