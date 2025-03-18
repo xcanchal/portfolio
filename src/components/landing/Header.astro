@@ -1,0 +1,17 @@
+---
+import { Image } from 'astro:assets';
+import portraitImg from '@/assets/portrait.png';
+---
+<div class="flex gap-8 items-center">
+	<Image 
+		src={portraitImg} 
+		alt="Xavier Canchal" 
+		loading="eager"
+		quality={100}
+		class="rounded-full w-[80px] h-[80px] sm:w-[100px] sm:h-[100px] object-cover" 
+	/>
+	<div class="flex flex-col gap-2">
+	  <h1 class="text-3xl sm:text-6xl font-bold m-0 sm:mb-2">Xavier Canchal</h1>
+	  <p class="sm:text-xl m-0">Full-stack Software Engineer & Solopreneur</p>
+	</div>
+</div>	

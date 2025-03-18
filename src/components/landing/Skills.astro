@@ -1,0 +1,32 @@
+---
+import { Badge } from "@/components/ui/badge";
+
+const skills: {
+	['Front-end']: string[];
+	['Back-end']: string[];
+	['DevOps']: string[];
+	['Testing']: string[];
+	['Others']: string[];
+} = {
+	['Front-end']: ["Typescript", "React", "CSS", "SAAS", "Tailwind", "Styled components", "Lerna"],
+	['Back-end']: ["Typescript", "NodeJS", "MongoDB", "Mongoose", "Redis", "Cypress", "REST", "GraphQL", "gRPC", "Microservices"],
+	['DevOps']: ["CI/CD", "Docker", "Kubernetes", "Helm"],
+	['Testing']: ["Cypress", "Mocha", "Chai", "Sinon", "Pact", "Unit testing", "Integration testing", "Contract testing"],
+	['Others']: ["Git", "Github", "OOP", "DDD", "Event-driven", "Gitflow", "Trunk-based dev", "Feature flags", "Unit testing", "Integration testing", "Contract testing"],
+};
+---
+<!-- <div class="flex flex-col gap-4">
+				<h2 class="text-xl sm:text-2xl font-bold sm:mb-2">Skills</h2>
+				<div class="text-lg m-0 gap-2 flex flex-wrap">
+				  {Object.entries(skills).map(([category, skills]) => (
+					<div key={category}>
+						<h3 class="text-lg font-bold">{category}</h3>
+						<div class="flex flex-wrap gap-2">
+							{skills.map((skill) => (
+								<Badge key={skill} variant="outline" client:load>{skill}</Badge>
+							))}
+						</div>
+					</div>
+				  ))}
+				</div>
+			  </div> -->
