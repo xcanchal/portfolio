@@ -1,5 +1,32 @@
 ---
+import { Image } from 'astro:assets';
 import { Button } from "@/components/ui/button";
+import { Linkedin, Github, Twitter, Mail, ExternalLink } from "lucide-astro";
+import portraitImg from '../assets/portrait.png';
+import "../styles/global.css";
+
+const socials = [
+  {
+    name: "Twitter",
+    icon: Twitter,
+    link: "https://x.com/xcanchal"
+  },
+  {
+    name: "Linkedin",
+    icon: Linkedin,
+    link: "https://www.linkedin.com/in/xcanchal/"
+  },  
+  {
+    name: "Github",
+    icon: Github,
+    link: "https://github.com/xcanchal"
+  },
+  { 
+    name: "Email",
+    icon: Mail,
+    link: "mailto:xaviercanchal@gmail.com"
+  }
+];
 ---
 
 <html lang="en">
@@ -8,12 +35,39 @@ import { Button } from "@/components/ui/button";
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Xavier Canchal | Software Engineer and Indie Maker</title>
+		<title>Xavier Canchal | Full-stack Software Engineer & Solopreneur</title>
 	</head>
 
 	<body>
-		<div class="grid place-items-center h-screen content-center">
-			<Button>Button</Button>
-		</div>
+		<main class="flex flex-col gap-10 sm:gap-12 max-w-[620px] mx-auto py-16 px-6 sm:px-0">
+			<div class="flex gap-8 items-center">
+				<Image 
+					src={portraitImg} 
+					alt="Xavier Canchal" 
+					loading="eager"
+					quality={100}
+					class="rounded-full w-[80px] h-[80px] sm:w-[100px] sm:h-[100px] object-cover" 
+				/>
+				<div class="flex flex-col gap-2">
+				  <h1 class="text-3xl sm:text-6xl font-bold m-0 sm:mb-2">Xavier Canchal</h1>
+				  <p class="sm:text-xl m-0">Full-stack Software Engineer & Solopreneur</p>
+				</div>
+			</div>	
+			<div class="flex flex-col gap-4">
+				<h2 class="text-xl sm:text-2xl font-bold sm:mb-2">About me</h2>
+				<p>
+				  I'm  a Full-Stack Software Engineer based in Barcelona with more than 10 years of experience. Self-taught developer and Startup cofounder turned Computer Scientist, specialized in Software Engineering. I like to have a holistic view of the products and the projects I'm involved with, from conceptualization to deployment.
+				</p>
+				<div class="flex gap-4 mt-4">
+					{socials.map((social) => (
+						<a href={social.link} target="_blank">
+							<Button variant="outline" size="icon" key={social.name} client:load className="cursor-pointer">
+								<social.icon />
+							</Button>
+						</a>
+					))}
+				</div>
+			</div>
+		</main>
 	</body>
 </html>
